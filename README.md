@@ -32,11 +32,9 @@ example_df <- read.csv(system.file("extdata", "m6A_input_example.csv",
                                    package = "m6APrediction"))
 ```
 
----
+### Example Usage
 
-## Example Usage
-
-### Predict a Single Sequence
+#### Predict a Single Sequence
 ```r
 library(m6APrediction)
 
@@ -53,7 +51,7 @@ library(m6APrediction)
 print(pred_single_result)
 
 ```
-### Predict Multiple Sequences
+#### Predict Multiple Sequences
 ```r
 library(m6APrediction)
 
