@@ -40,9 +40,18 @@ example_df <- read.csv(system.file("extdata", "m6A_input_example.csv",
 ```r
 library(m6APrediction)
 
-seq <- "ATGCGTACGTAGCTAGCTAG"
+ pred_single_result <- prediction_single(
+     ml_fit = model,
+     gc_content = 0.55,
+     RNA_type = "mRNA",
+     RNA_region = "CDS",
+     exon_length = 1500,
+     distance_to_junction = 120,
+     evolutionary_conservation = 0.32,
+     DNA_5mer = "ATCGA"
+ )
+print(pred_single_result)
 
-prediction_single(seq)
 ```
 ### Predict Multiple Sequences
 ```r
