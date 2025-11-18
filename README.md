@@ -55,11 +55,12 @@ print(pred_single_result)
 ```r
 library(m6APrediction)
 
+model <- readRDS(system.file("extdata", "rf_fit.rds",
+                             package = "m6APrediction"))
 df <- read.csv(system.file("extdata", "m6A_input_example.csv",
                            package = "m6APrediction"))
-
-results <- prediction_multiple(df)
-head(results)
+pred_result <- prediction_multiple(model, df, positive_threshold = 0.5)
+head(pred_result[, c("gc_content", "RNA_type", "predicted_m6A_prob", "predicted_m6A_status")])
 ```
 
 ---
